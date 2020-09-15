@@ -1,0 +1,1 @@
+FROM rocketchat/hubot-rocketchat
