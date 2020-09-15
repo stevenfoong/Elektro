@@ -8,7 +8,7 @@ This hubot is to connect with Rocketchat so that user can issue command from Roc
 
 ## Running this image with docker-compose
 
-The volumes are set to keep the scripts persistent.
+The volumes are set to keep your custom scripts persistent.
 
 ```
 version: '3'
