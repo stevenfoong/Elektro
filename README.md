@@ -13,20 +13,29 @@ The volumes are set to keep your custom scripts persistent.
 ```
 version: '3'
 services:
-  skype-rocketchat-bridge:
+  elektro:
     image: stevenfoong/elektro
     container_name: elektro
     restart: always
     environment:
-     -e ROCKETCHAT_URL=<your rocketchat instance>:<port>
-     -e ROCKETCHAT_ROOM='general' 
-	   -e RESPOND_TO_DM=true 
-	   -e ROCKETCHAT_USER=botname 
-	   -e ROCKETCHAT_PASSWORD=botpass 
-	   -e HUBOT_NAME=elektro
-	   -e EXTERNAL_SCRIPTS=hubot-help,hubot-diagnostics 
+     - ROCKETCHAT_URL=<your rocketchat instance>:<port>
+     - ROCKETCHAT_ROOM='general' 
+     - RESPOND_TO_DM=true 
+     - ROCKETCHAT_USER=botname 
+     - ROCKETCHAT_PASSWORD=botpass 
+     - HUBOT_NAME=elektro
+     - EXTERNAL_SCRIPTS=hubot-help,hubot-diagnostics 
     volumes:
      - /data/elektro:/home/hubot/scripts
+  automation-hook:
+    image: stevenfoong/automation-hook
+    container_name: automation-hook
+    restart: always
+    environment:
+     - ENV = ENV VALUE
+    volumes:
+     - VOLUME : PATH
+
 ```
 
 ## Need Help ?
