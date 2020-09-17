@@ -27,6 +27,7 @@ services:
      - EXTERNAL_SCRIPTS=hubot-help,hubot-diagnostics 
     volumes:
      - /data/elektro:/home/hubot/scripts
+     
   automation-hook:
     image: stevenfoong/automation-hook
     container_name: automation-hook
